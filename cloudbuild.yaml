@@ -10,6 +10,6 @@ steps:
 # Deploy container image to Cloud Run
 #  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #    entrypoint: gcloud
-#    args: ['run', 'deploy', 'my-web-app', '--image', 'gcr.io/peaceful-nation-399620/my-web-app', '--region', 'northamerica-northeast2']
+#    args: ['run', 'deploy', 'my-web-app', '--image', 'northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app', '--region', 'northamerica-northeast2']
 images:
 - northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app
