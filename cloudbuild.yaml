@@ -1,15 +1,15 @@
 steps:
   # Build the container image using  docker cloud builder
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/peaceful-nation-399620/my-web-app:$COMMIT_SHA', './Assignment 1 Files']
+    args: ['build', '-t', 'northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app:$COMMIT_SHA', './Assignment 1 Files']
 
   # Push the image to my artifact registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/peaceful-nation-399620/my-web-app:$COMMIT_SHA']
+    args: ['push', 'northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app:$COMMIT_SHA']
 
 # Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: ['run', 'deploy', 'my-web-app', '--image', 'gcr.io/peaceful-nation-399620/my-web-app', '--region', 'northamerica-northeast2']
+#  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#    entrypoint: gcloud
+#    args: ['run', 'deploy', 'my-web-app', '--image', 'gcr.io/peaceful-nation-399620/my-web-app', '--region', 'northamerica-northeast2']
 images:
-- gcr.io/peaceful-nation-399620/my-web-app
+- northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app
