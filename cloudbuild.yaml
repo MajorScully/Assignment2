@@ -11,5 +11,10 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: ['run', 'deploy', 'my-web-app', '--image', 'northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app:$COMMIT_SHA', '--region', 'northamerica-northeast2', '--port', '3000']
+
+options:
+  # Set defaultLogsBucketBehavior to REGIONAL_USER_OWNED_BUCKET
+  defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
+
 images:
 - northamerica-northeast2-docker.pkg.dev/peaceful-nation-399620/bob-100805862/my-web-app
